@@ -20,3 +20,7 @@ config.py
 *.html
 *.js
 *.css
+*.png
+*.jpg
+*.gif
+*.ico
