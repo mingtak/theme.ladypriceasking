@@ -1,0 +1,17 @@
+theme.ladypriceasking Installation
+----------------------------------
+
+To install theme.ladypriceasking using zc.buildout and the plone.recipe.zope2instance
+recipe to manage your project, you can do this:
+
+* Add ``theme.ladypriceasking`` to the list of eggs to install, e.g.:
+
+    [buildout]
+    ...
+    eggs =
+        ...
+        theme.ladypriceasking
+       
+* Re-run buildout, e.g. with:
+
+    $ ./bin/buildout
