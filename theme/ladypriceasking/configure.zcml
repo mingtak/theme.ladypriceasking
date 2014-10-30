@@ -15,9 +15,14 @@
       description="Extension profile for Theme for lady.priceasking.com"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-
+<!--
   <plone:static
     directory="diazo_resources"
+    type="theme"
+    />
+-->
+  <plone:static
+    directory="media_resources"
     type="theme"
     />
 

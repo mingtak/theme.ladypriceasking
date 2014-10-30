@@ -74,6 +74,11 @@
     <replace css:theme="div#cjproduct-item"
              css:content="div#cjproduct-item" />
 
+    <!-- Login Form -->
+    <before css:theme-children="#content"
+             css:content="#login_form" css:if-content="#login_form" />
+    <drop css:theme-children="#content" css:if-content="#login_form" />
+
 <!--
   <replace css:theme="ul.portfolio-strip.fixed"
            css:content="ul.portfolio-strip.fixed" />
@@ -85,7 +90,8 @@
 
 
   <!-- portal-column-two / sidebar-->
-
+  <replace css:theme-children="div#portal-column-two"
+           css:content-children="div#portal-column-two" />
 
   <!-- portal-column-two / edit-bar -->
 
@@ -96,6 +102,9 @@
   <!-- plone-content, template-seo-context-properties -->
 
 
+
+  <!-- webtracecode -->
+  <after  css:theme-children="head" css:content-children="div#webtracecode" />
 
   <!-- Drop -->
   <theme href="page-with-sidebar.html" if="$iscollection" />

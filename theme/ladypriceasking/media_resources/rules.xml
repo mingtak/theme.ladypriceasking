@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- Theme, NoTheme -->
+  <theme href="index.html"/>
+  <notheme if="$configlets"/>
+  <notheme if="$ismanager"/>
+  <notheme if="$iseditor"/>
+
+  <!-- head session -->
+  <replace css:theme="html head title" css:content="html head title" />
+  <before css:theme-children="html head" css:content="head meta" />
+  <copy css:theme="head base" css:content="head base" />
+
+  <!-- web trace code -->
+  <after css:theme-children="body" css:content="div#webtracecode" />
+
+  <!-- logo -->
+  <replace css:theme="div.logo a" css:content="a#portal-logo"/>
+  <replace css:theme="div.footer-logo svg" css:content="a#portal-logo"/>
+
+  <!-- extra menu -->
+  <replace css:theme="div.side-menu.animate-dropdown"
+           css:content="div.side-menu.animate-dropdown" />
+
+  <!-- hero promotion -->
+  <replace css:theme-children="div#hero"
+           css:content-children="div#hero_collection" />
+
+  <!-- banner-holder -->
+  <replace css:theme="section#banner-holder"
+           css:content="section#banner-holder" />
+
+
+  <!-- products-tab -->
+  <replace css:theme="div#products-tab"
+           css:content="div#products-tab" />
+
+  <!-- footer product list -->
+  <replace css:theme-children="footer div#plone-footer-product-list"
+           css:content-children="div#plone-footer-product-list div.container" />
+
+  <!-- footer infomation -->
+  <drop css:theme-children="div.col-xs-12.col-md-8.no-margin" />
+  <after css:theme-children="div.col-xs-12.col-md-8.no-margin"
+         css:content-children="div#googleadinfooter" />
+  <after css:theme-children="div.col-xs-12.col-md-8.no-margin"
+         css:content-children="div#googleadinfooter" />
+  <drop css:theme="div.contact-info p" />
+  <replace css:theme-children="div.copyright-bar"
+           css:content="div#portal-footer" />
+
+  <!-- top bar 暫刪 -->
+  <drop css:theme="nav.top-bar.animate-dropdown" />
+
+  <!-- top cart row 暫刪 -->
+  <drop css:theme="div.top-cart-row" />
+
+  <!-- contact/phone number 暫刪 -->
+  <drop css:theme="div.contact-row div.phone.inline" />
+  <drop css:theme="div.contact-row div.contact.inline" />
+
+
+  <!-- template-productlist -->
+  <drop css:theme="div#hero" css:if-content="body.template-productlist" />
+  <drop css:theme="section#banner-holder" css:if-content="body.template-productlist" />
+  <drop css:theme="div#products-tab" css:if-content="body.template-productlist" />
+  <before css:theme="div#hero"
+          css:content-children="div#productlist-content"
+          css:if-content="body.template-productlist" />
+    <!-- wish-compare 暫刪 -->
+  <drop css:content="div.wish-compare" css:if-content="body.template-productlist" />
+  <drop css:content="div.addto-compare" css:if-content="body.template-productlist" />
+  <drop css:content="a.btn-add-to-wishlist" css:if-content="body.template-productlist" />
+
+
+  <!-- cj product -->
+  <drop css:theme="div#hero" if="$iscjproduct" />
+  <drop css:theme="section#banner-holder" if="$iscjproduct" />
+  <drop css:theme="div#products-tab" if="$iscjproduct" />
+  <before css:theme="div#hero"
+          css:content-children="div#cjproduct"
+          if="$iscjproduct" />
+    <!-- wish-compare 暫刪 -->
+  <drop css:content="a.btn-add-to-wishlist" if="$iscjproduct"/>
+  <drop css:content="a.btn-add-to-compare" if="$iscjproduct"/>
+
+
+
+<!-- css:if-content="#visual-portal-wrapper" /> -->
+</rules>
+
